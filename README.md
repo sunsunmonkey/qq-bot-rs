@@ -6,4 +6,4 @@
 
 Thanks to:
 
-- Rust语言的QQ机器人框架 ![rust_proc_qq](https://github.com/niuhuan/rust_proc_qq)
+- Rust语言的QQ机器人框架 [rust_proc_qq](https://github.com/niuhuan/rust_proc_qq)
