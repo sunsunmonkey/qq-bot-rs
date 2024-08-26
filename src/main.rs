@@ -1,6 +1,5 @@
 extern crate core;
 
-use modules::scheduler;
 use proc_qq::re_exports::ricq;
 use proc_qq::re_exports::ricq::version::ANDROID_WATCH;
 use proc_qq::Authentication::QRCode;
@@ -26,11 +25,13 @@ async fn main() -> anyhow::Result<()> {
         .device(JsonFile("device.json".to_owned()))
         .version(&ANDROID_WATCH)
         .qsign(Some(Arc::new(qsign)))
-        .schedulers(vec![scheduler::scheduler()])
+        .modules(modules::all_modules())
+        // .schedulers(vec![scheduler::scheduler()]) 定时任务
         .show_rq(Some(ShowQR::OpenBySystem))
         .build()
         .await
         .unwrap();
+
     let client = Arc::new(client);
     let copy = client.clone();
     tokio::spawn(async move {

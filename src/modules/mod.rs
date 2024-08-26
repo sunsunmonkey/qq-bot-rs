@@ -5,7 +5,6 @@ use std::sync::Arc;
 mod ignore;
 mod menu;
 mod query;
-pub mod scheduler;
 mod tools;
 
 lazy_static! {
